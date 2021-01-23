@@ -15,13 +15,14 @@ Agent = A[random.randrange(len(A))]
 
 headers = {'user-agent': Agent}
 
+websites_list = []
 
-def init_finder(term):
+
+def init_finder(term, n):
 
     query = term
     query = query.replace(' ', '+')
-    search = f"https://google.com/search?q={query}"
-    websites_list = []
+    search = f"https://google.com/search?q={query}&num={n}"
     result = []
 
     def getWebsites():

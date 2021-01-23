@@ -11,7 +11,8 @@ def home():
 @app.route("/result", methods=["POST"])
 def result():
     term = request.form["search"]
-    data = finder.init_finder(term)
+    index = request.form["res"]
+    data = finder.init_finder(term, index)
     results_count = str(len(data))
     if len(data) == 0:
         data = ""

@@ -5,11 +5,22 @@ content %}
     <div class="column column-70" style="margin: auto">
       <form action="result" method="POST">
         <fieldset>
-          <input
+          <!-- <input
             type="text"
-            placeholder="Enter keyword.."
+            placeholder="Enter keywords.."
             id="searchField"
             name="search"
+          /> -->
+          <textarea
+            placeholder="Enter keywords.."
+            id="commentField"
+            name="search"
+          ></textarea>
+          <input
+            type="text"
+            placeholder="Number of page results"
+            id="searchField"
+            name="res"
           />
           <input
             class="button-primary btnSubmit"
