@@ -9,7 +9,22 @@ content %}
 </div>
 <div class="container">
   <div class="row">
-    <div class="column column-70" style="margin: auto">{{results}}</div>
+    <div class="column column-70" style="margin: auto">
+      {{num_results}} results found
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="column column-70" style="margin: auto">
+      <ul>
+        {% for r in results %}
+        <li>
+          <a target="_blank" href="{{r}}">{{r}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>
 {%endblock%}

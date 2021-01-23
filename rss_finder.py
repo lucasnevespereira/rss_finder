@@ -57,6 +57,3 @@ def init_finder(term):
         find_rss(website)
 
     return result
-
-
-print(init_finder())

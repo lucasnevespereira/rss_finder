@@ -8,13 +8,22 @@ content %}
           <input
             type="text"
             placeholder="Enter keyword.."
-            id="nameField"
+            id="searchField"
             name="search"
           />
-          <input class="button-primary" type="submit" value="Search" />
+          <input
+            class="button-primary btnSubmit"
+            type="submit"
+            value="Search"
+            onclick="showLoader()"
+          />
         </fieldset>
       </form>
     </div>
   </div>
 </div>
+<div
+  class="hide loader loader-default is-active"
+  data-text="Scraping Possible RSS Links"
+></div>
 {%endblock%}
