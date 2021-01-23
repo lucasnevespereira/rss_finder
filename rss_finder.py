@@ -43,14 +43,14 @@ def init_finder(term):
             href = a.get("href", None)
             if href:
                 if "xml" in href or "rss" in href or "feed" in href:
-                    possible_feeds.append(base + href)
-        for url in list(set(possible_feeds)):
-            if len(url) > 0:
-                if url not in result:
-                    if keyword in url and validators.url(url):
-                        result.append(url)
+                    possible_feeds.append(base+href)
+        for u in list(set(possible_feeds)):
+            if validators.url(u):
+                if u not in result:
+                    result.append(u)
 
     print("Executing scraping...")
+    print("Visiting ", search)
     getWebsites()
 
     for website in websites_list:
