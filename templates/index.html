@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %}RSS_Finder{%endblock%} {% block
+content %}
+<div class="container">
+  <div class="row">
+    <div class="column column-70" style="margin: auto">
+      <form action="result" method="POST">
+        <fieldset>
+          <input
+            type="text"
+            placeholder="Enter keyword.."
+            id="nameField"
+            name="search"
+          />
+          <input class="button-primary" type="submit" value="Search" />
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}
