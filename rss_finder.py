@@ -1,8 +1,13 @@
 import requests
 from bs4 import BeautifulSoup as bs
+import feedparser
+import urllib.parse
+import validators
 
 search = "https://news.google.com/rss/search?q=moto"
+keyword = "moto"
 websites_list = []
+result = []
 
 
 def getWebsites():
@@ -19,7 +24,6 @@ def getWebsites():
 
 def find_rss(site):
     raw = requests.get(site).text
-    result = []
     possible_feeds = []
     html = bs(raw, features="html5lib")
     feed_urls = html.findAll("link", rel="alternate")
@@ -32,6 +36,19 @@ def find_rss(site):
                     if href:
                         possible_feeds.append(href)
                         print(href)
+    parsed_url = urllib.parse.urlparse(site)
+    base = parsed_url.scheme + "://" + parsed_url.hostname
+    atags = html.find_all("a")
+    for a in atags:
+        href = a.get("href", None)
+        if href:
+            if "xml" in href or "rss" in href or "feed" in href:
+                possible_feeds.append(base + href)
+    for url in list(set(possible_feeds)):
+        if len(url) > 0:
+            if url not in result:
+                if keyword in url and validators.url(url):
+                    result.append(url)
 
 
 print("Executing scraping...")
@@ -39,3 +56,6 @@ getWebsites()
 
 for website in websites_list:
     find_rss(website)
+
+print(result)
+print("Found " + str(len(result)) + " results.")
