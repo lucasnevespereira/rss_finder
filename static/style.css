@@ -9,6 +9,24 @@ body {
   background-color: #eeeeee;
 }
 
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 30px;
+}
+
+.logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
 .hide {
   display: none;
 }
