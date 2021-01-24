@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import rss_finder as finder
+from scripts import rss_finder
 app = Flask(__name__)
 
 
@@ -11,8 +11,8 @@ def home():
 @app.route("/result", methods=["POST"])
 def result():
     term = request.form["search"]
-    index = request.form["res"]
-    data = finder.init_finder(term, index)
+    index = request.form["page"]
+    data = rss_finder.init_finder(term, int(index))
     results_count = str(len(data))
     if len(data) == 0:
         data = ""
