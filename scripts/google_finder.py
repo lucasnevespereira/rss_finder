@@ -19,7 +19,6 @@ def init_finder(term, num_pages):
 
     query = term
     query = query.replace(" ", "+")
-    # search = f"https://google.com/search?q={query}&num={n}"
     result = []
 
     def getWebsites(n):
@@ -40,13 +39,6 @@ def init_finder(term, num_pages):
             print("=" * 10, f"Result #{i+start-1}", "=" * 10)
             print("URL:", link, "\n")
             websites_list.append(link)
-
-        # r = requests.get(search)
-        # soup = bs(r.text, features="lxml")
-
-        # for info in soup.find_all('div', class_='yuRUbf'):
-        #     link = info.find('a')
-        #     websites_list.append(link.get('href'))
 
     def find_rss(site):
         raw = requests.get(site).text
