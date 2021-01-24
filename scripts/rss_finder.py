@@ -4,6 +4,7 @@ import feedparser
 import urllib.parse
 import validators
 import random
+import math
 
 
 A = ("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
@@ -18,14 +19,16 @@ headers = {'user-agent': Agent}
 websites_list = []
 
 
-def init_finder(term, n):
-
+def init_finder(term, num_pages):
     query = term
     query = query.replace(' ', '+')
-    search = f"https://google.com/search?q={query}&num={n}"
     result = []
 
-    def getWebsites():
+    def getWebsites(n):
+
+        page = n * 10
+
+        search = f"https://google.com/search?q={query}&start={page}"
 
         r = requests.get(search, headers=headers)
         soup = bs(r.text, features="lxml")
@@ -62,10 +65,12 @@ def init_finder(term, n):
                     result.append(u)
 
     print("Executing scraping...")
-    print("Visiting ", search)
-    getWebsites()
+
+    for x in range(10):
+        getWebsites(x)
 
     for website in websites_list:
         find_rss(website)
+        print(website)
 
     return result
