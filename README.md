@@ -18,6 +18,13 @@ Params:
 - Keywords: keywords you want to look for (ex: "moto voiture")
 - Number of results: Is the number of results you want to analyse(ex: 50)
 
+### Additional info
+
+By default Google displays 10 result by page.
+So in <b>RSS Finder script</b> 50 results equals to 5 pages.
+
+For <b>Google Script</b> 5 pages equals to 50 results.
+
 ### How to switch between rss_finder and google_finder scripts
 
 In [app.py](app.py) change the import statement
@@ -32,12 +39,20 @@ or
 from scripts import rss_finder as finder
 ```
 
-### Additional info
+### Setup GOOGLE API KEYS
 
-By default Google displays 10 result by page.
-So in <b>RSS Finder script</b> 50 results equals to 5 pages.
+Create a .env file
 
-For <b>Google Script</b> 5 pages equals to 50 results.
+```
+touch .env
+```
+
+Enter you API KEYS
+
+```
+GOOGLE_API_KEY=YOUR_API_KEY_HERE
+GOOGLE_SEARCH_ENGINE_ID=YOUR_SEARCH_ENGINE_ID_HERE
+```
 
 <hr>
 
