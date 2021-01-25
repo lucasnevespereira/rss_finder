@@ -39,7 +39,7 @@ or
 from scripts import rss_finder as finder
 ```
 
-### Setup GOOGLE API KEYS
+### Setup Google Credentials
 
 Create a .env file
 
