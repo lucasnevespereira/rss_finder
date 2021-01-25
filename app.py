@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from scripts import rss_finder as finder
+from scripts import google_finder as finder
 app = Flask(__name__)
 
 

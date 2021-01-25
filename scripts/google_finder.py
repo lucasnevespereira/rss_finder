@@ -74,5 +74,6 @@ def init_finder(term, num_pages):
 
     for website in websites_list:
         find_rss(website)
+        print("Looking rss in :", website)
 
     return result
