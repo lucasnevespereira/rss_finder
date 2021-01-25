@@ -18,7 +18,19 @@ Params:
 - Keywords: keywords you want to look for (ex: "moto voiture")
 - Number of results: Is the number of results you want to analyse(ex: 50)
 
-<hr>
+### How to switch between rss_finder and google_finder scripts
+
+In [app.py](app.py) change the import statement
+
+```
+from scripts import google_finder as finder
+```
+
+or
+
+```
+from scripts import rss_finder as finder
+```
 
 ### Additional info
 
@@ -26,6 +38,8 @@ By default Google displays 10 result by page.
 So in <b>RSS Finder script</b> 50 results equals to 5 pages.
 
 For <b>Google Script</b> 5 pages equals to 50 results.
+
+<hr>
 
 ## Usage
 
