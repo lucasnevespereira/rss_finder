@@ -26,3 +26,19 @@ By default Google displays 10 result by page.
 So in <b>RSS Finder script</b> 50 results equals to 5 pages.
 
 For <b>Google Script</b> 5 pages equals to 50 results.
+
+## Usage
+
+```
+git clone https://github.com/lucasnevespereira/rss_finder.git
+```
+
+```
+pip install -r requirements.txt
+```
+
+```
+python app.py
+```
+
+Visit [localhost:5000](http://127.0.0.1:5000/)
