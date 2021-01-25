@@ -47,7 +47,7 @@ Create a .env file
 touch .env
 ```
 
-Enter you API KEYS
+Enter your credentials
 
 ```
 GOOGLE_API_KEY=YOUR_API_KEY_HERE
