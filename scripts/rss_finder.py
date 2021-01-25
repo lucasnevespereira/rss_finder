@@ -35,9 +35,9 @@ def init_finder(term, num_pages):
 
     def getWebsites(n):
 
-        page = n * 10
+        #page = n * 10
 
-        search = f"https://google.com/search?q={query}&start={page}"
+        search = f"https://google.com/search?q={query}&num={n}"
 
         r = requests.get(search, headers=request_headers)
         soup = bs(r.text, features="lxml")
